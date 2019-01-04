@@ -15,3 +15,5 @@ Finally, make your `PYTHONPATH` could find your `tflite` package. For example: `
 After these steps, you could test using this command: `python3 -c "import tflite"`
 
 If you don't have Flatbuffers compiler(flatc), you could see more instructions about how to build / install: https://github.com/google/flatbuffers
+
+Use `python3 setup.py sdist bdist_wheel` to build a python package.
