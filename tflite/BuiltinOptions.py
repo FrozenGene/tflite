@@ -72,4 +72,15 @@ class BuiltinOptions(object):
     SquareOptions = 66
     ZerosLikeOptions = 67
     FillOptions = 68
+    BidirectionalSequenceLSTMOptions = 69
+    BidirectionalSequenceRNNOptions = 70
+    UnidirectionalSequenceLSTMOptions = 71
+    FloorModOptions = 72
+    RangeOptions = 73
+    ResizeNearestNeighborOptions = 74
+    LeakyReluOptions = 75
+    SquaredDifferenceOptions = 76
+    MirrorPadOptions = 77
+    AbsOptions = 78
+    SplitVOptions = 79
 

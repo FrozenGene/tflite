@@ -97,4 +97,12 @@ class BuiltinOperator(object):
     SQUARE = 92
     ZEROS_LIKE = 93
     FILL = 94
+    FLOOR_MOD = 95
+    RANGE = 96
+    RESIZE_NEAREST_NEIGHBOR = 97
+    LEAKY_RELU = 98
+    SQUARED_DIFFERENCE = 99
+    MIRROR_PAD = 100
+    ABS = 101
+    SPLIT_V = 102
 

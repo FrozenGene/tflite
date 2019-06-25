@@ -22,8 +22,8 @@ class SequenceRNNOptions(object):
     def TimeMajor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
+            return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
+        return False
 
     # SequenceRNNOptions
     def FusedActivationFunction(self):
