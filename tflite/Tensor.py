@@ -59,7 +59,7 @@ class Tensor(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
-        return bytes()
+        return None
 
     # Tensor
     def Quantization(self):
@@ -76,8 +76,8 @@ class Tensor(object):
     def IsVariable(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
+            return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
+        return False
 
 def TensorStart(builder): builder.StartObject(6)
 def TensorAddShape(builder, shape): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(shape), 0)
