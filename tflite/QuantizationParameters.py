@@ -123,7 +123,14 @@ class QuantizationParameters(object):
             return obj
         return None
 
-def QuantizationParametersStart(builder): builder.StartObject(6)
+    # QuantizationParameters
+    def QuantizedDimension(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def QuantizationParametersStart(builder): builder.StartObject(7)
 def QuantizationParametersAddMin(builder, min): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(min), 0)
 def QuantizationParametersStartMinVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def QuantizationParametersAddMax(builder, max): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(max), 0)
@@ -134,4 +141,5 @@ def QuantizationParametersAddZeroPoint(builder, zeroPoint): builder.PrependUOffs
 def QuantizationParametersStartZeroPointVector(builder, numElems): return builder.StartVector(8, numElems, 8)
 def QuantizationParametersAddDetailsType(builder, detailsType): builder.PrependUint8Slot(4, detailsType, 0)
 def QuantizationParametersAddDetails(builder, details): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(details), 0)
+def QuantizationParametersAddQuantizedDimension(builder, quantizedDimension): builder.PrependInt32Slot(6, quantizedDimension, 0)
 def QuantizationParametersEnd(builder): return builder.EndObject()
