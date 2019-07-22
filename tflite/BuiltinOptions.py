@@ -83,4 +83,15 @@ class BuiltinOptions(object):
     MirrorPadOptions = 77
     AbsOptions = 78
     SplitVOptions = 79
+    UniqueOptions = 80
+    ReverseV2Options = 81
+    AddNOptions = 82
+    GatherNdOptions = 83
+    CosOptions = 84
+    WhereOptions = 85
+    RankOptions = 86
+    ReverseSequenceOptions = 87
+    MatrixDiagOptions = 88
+    QuantizeOptions = 89
+    MatrixSetDiagOptions = 90
 
