@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tflite",
-    version="2.0",
+    version="2.1",
     author="google",
     author_email="google@google.com",
     description="TFLite",
