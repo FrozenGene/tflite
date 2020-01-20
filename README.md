@@ -1,11 +1,11 @@
 # TFLite
 TFLite python API package for parsing TFLite model.
 
-The generated Python API is based on Tensorflow 1.14.
+The generated Python API is based on Tensorflow 2.0.
 
 If you want to generate by yourself, you could do using the following commands:
 
-1. Get the Tensorflow 1.14 TFLite model schema file, for example: `wget https://raw.githubusercontent.com/tensorflow/tensorflow/r1.14/tensorflow/lite/schema/schema.fbs` or you could find this `schema.fbs` file in this repo.
+1. Get the Tensorflow 2.0 TFLite model schema file, for example: `wget https://raw.githubusercontent.com/tensorflow/tensorflow/r2.0/tensorflow/lite/schema/schema.fbs` or you could find this `schema.fbs` file in this repo.
 2. `flatc --python schema.fbs`
 
 Then you should find one generated directory named as `tflite` in your current directory.
