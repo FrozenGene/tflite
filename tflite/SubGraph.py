@@ -107,7 +107,7 @@ class SubGraph(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
-        return None
+        return bytes()
 
 def SubGraphStart(builder): builder.StartObject(5)
 def SubGraphAddTensors(builder, tensors): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(tensors), 0)

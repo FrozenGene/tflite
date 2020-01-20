@@ -36,8 +36,8 @@ class SkipGramOptions(object):
     def IncludeAllNgrams(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
-        return False
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
 
 def SkipGramOptionsStart(builder): builder.StartObject(3)
 def SkipGramOptionsAddNgramSize(builder, ngramSize): builder.PrependInt32Slot(0, ngramSize, 0)

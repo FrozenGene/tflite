@@ -22,8 +22,8 @@ class SparseToDenseOptions(object):
     def ValidateIndices(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
-        return False
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
 
 def SparseToDenseOptionsStart(builder): builder.StartObject(1)
 def SparseToDenseOptionsAddValidateIndices(builder, validateIndices): builder.PrependBoolSlot(0, validateIndices, 0)
